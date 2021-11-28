@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Status</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="description" content="Statistics of xtreme.">
+    <meta name="theme-color" content="#f54254">
+    <link rel="icon" type="image/png" sizes="300x250" href="https://cdn.discordapp.com/attachments/866926963410075648/901139083663933500/test_xtreme.png">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+</head>
+<script>
+    
+    async function func(){
+        const api = "https://api.statcord.com/v3/784021298832998430"
+        let response = await fetch(api)
+        json_data = await response.json()
+        console.log(json_data.data[0])
+        console.log(json_data.popular[0])
+        document.getElementById("server").innerHTML = `${json_data.data[0].servers}`
+        document.getElementById("user").innerHTML = `${json_data.data[0].users}`
+        document.getElementById("acti").innerHTML = `${json_data.data[0].active}`
+        document.getElementById("popu").innerHTML = `${json_data.popular[0].name}`
+        document.getElementById("times").innerHTML = `${json_data.popular[0].count} times executed`
+        document.getElementById("ram").innerHTML = `${json_data.data[0].memload} GB`
+        console.log(json_data.data[0].servers)
+
+    }
+
+    
+    
+    func()
+
+    function features(){
+        document.getElementById("features").scrollIntoView(true);
+    }
+</script>
+<body>
+    <!--<marquee behavior="" direction="left" class="news"><i class="fa fa-cog" style='padding-right: 10px;'></i>Slash commands are coming soon..</marquee>-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href=""><img src="https://cdn.discordapp.com/attachments/866926963410075648/901139083663933500/test_xtreme.png" alt="">Xtreme</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <!--<span class="navbar-toggler-icon"></span>-->
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="https://xtreme-discord.github.io">Home</a>
+              </li>
+              <li class="nav-item custom">
+                <a class="nav-link" href="https://top.gg/bot/784021298832998430/vote">Vote</a>
+              </li>
+              <li class="nav-item custom">
+                <a class="nav-link" href="https://xtreme-discord.github.io/faq">FAQ's</a>
+              </li>
+              <li class="nav-item custom">
+                <a class="nav-link" href="https://discord.com/invite/SVWdQjXGag">Support</a>
+              </li>
+              <li class="nav-item custom">
+                <a class="nav-link" href="https://xtreme-discord.github.io/tutorials">Tutorials</a>
+              </li>
+              <li class="nav-item custom">
+                <a class="nav-link" href="https://donatebot.io/checkout/797725852681895936">Donate</a>
+              </li>
+              <li class="nav-item custom">
+                <a class="nav-link" href="https://xtreme-discord.github.io/privacy-policy">Privacy policy</a>
+              </li>
+              <!--<li class="nav-item login-btn" id="login-li" style="padding-top: 10px;">
+                <a id="login" style="color: white;" href="https://discord.com/api/oauth2/authorize?client_id=886619489997848596&redirect_uri=http%3A%2F%2F127.0.0.1%3A5501%2Findex.html&response_type=code&scope=identify"><i class="bi bi-discord" style="padding-right: 10px;"></i> Login</a>
+              </li>-->
+            </ul>
+          </div>
+          </div>
+    </nav>
+    <!--justify-content-xl-center align-items-xl-center-->
+    <header class="d-xl-flex flex-column  main-content">
+      <h1 class="d-xl-flex justify-content-xl-start" style="font-family: 'Poppins', sans-serif; "><i class="fa fa-shield"></i>Status</h1>
+
+        <div class="btns">
+          
+          <div class="stat"><img src="https://cdn.discordapp.com/emojis/880451040305094677.png?size=56" alt=""> <div class="text"><p>Servers</p><i id="server"></i></div></div>
+          <div class="stat"><img src="https://cdn.discordapp.com/emojis/781258568191049730.png?size=56" alt=""> <div class="text"><p>Users</p><i id="user"></i></div></div>
+          <div class="stat"><img src="https://cdn.discordapp.com/emojis/892799614388949052.png" alt=""> <div class="text"><p>ram usage</p><i id="ram"></i></div></div>
+          <div class="stat"><img src="https://cdn.discordapp.com/emojis/863079503596617758.png?size=56" alt=""> <div class="text"><p>shards</p><i>1</i></div></div>
+          <div class="stat"><img src="https://cdn.discordapp.com/emojis/762814306835759116.png?size=56" alt=""> <div class="text"><p>no. of   users engaged (today)</p><i id="acti"></i></div></div>
+          <div class="stat"><img src="https://cdn.discordapp.com/emojis/897132061192765472.png?size=56" alt=""> <div class="text"><p>popular command (today)</p><i id="popu"></i></div></div>
+        </div>
+
+    </header>
+    <div class="footer-dark" style="background: #141421;padding-top: 0px;padding-bottom: 0px;">
+        <div class="container">
+            <p class="copyright" style="color: var(--text-color);">Copyright © 2020 Xtreme - All Rights Reserved</p>
+            <p class="copyright" style="color: var(--text-color);padding: 0px;">
+            
+        </div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init({
+        once:true
+    });
+</script>
+</html>
